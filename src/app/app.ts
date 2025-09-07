@@ -10,6 +10,9 @@ import { MatNavList } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 
 @Component({
@@ -22,14 +25,20 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
     MatDividerModule,
   MatNavList,
 MatCardModule,
-    MatGridListModule],
+    MatGridListModule,
+  MatFormField,
+MatLabel,
+FormsModule,
+MatInputModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App implements OnInit {
 
   gridCols = 3;
+  searchTerm: string = '';
 
+  
   blogPosts = [
   {
     title: 'Responsive ',
@@ -39,20 +48,20 @@ export class App implements OnInit {
     image: '/dummyImage.png',
   },
   {
-    title: 'Learn Material Design in Angular',
+    title: 'Learn Material Design in Anular',
     channel: 'this is card',
     views: '500K',
     date: '3 days ago',
     image: '/dummyImage.png',
   },
   {
-    title: 'Learn Material Design in Angular',
+    title: 'Learn Materal Design in Angular',
     channel: 'xyz',
     views: '500K',
     date: '3 days ago',
     image: '/dummyImage.png',
   },{
-    title: 'Learn Material Design in Angular',
+    title: 'Learn Materia Design in Angular',
     channel: 'test',
     views: '500K',
     date: '3 days ago',
@@ -60,6 +69,21 @@ export class App implements OnInit {
   }
   // Add more items...
 ];
+
+ filteredPosts = [...this.blogPosts];
+
+   filterPosts() {
+    const term = this.searchTerm.toLowerCase();
+    this.filteredPosts = this.blogPosts.filter(post =>
+      post.title.toLowerCase().includes(term) ||
+      post.channel.toLowerCase().includes(term)
+    );
+  }
+   clearSearch() {
+    this.searchTerm = '';
+    this.filteredPosts = [...this.blogPosts];
+  }
+
 
 
   constructor(private breakpointObserver: BreakpointObserver) {}

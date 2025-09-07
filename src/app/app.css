@@ -24,3 +24,25 @@
   color: gray;
   margin: 0;
 }
+
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+  margin: 16px auto;
+  display: block;
+  position: sticky;    /* makes it stick */
+  top: 72px;           /* distance from top (height of toolbar) */
+  z-index: 1000;      
+  box-sizing: border-box;
+  padding: 0 8px;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+}
+.top-bar {
+  padding: 16px 16px; /* top/bottom and left/right padding */
+ margin-top: 22px;
+}

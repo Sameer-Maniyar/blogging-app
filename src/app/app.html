@@ -1,7 +1,15 @@
 
-<mat-toolbar color="primary">
-  My Blog
+<mat-toolbar color="primary" class="top-bar">
+    <mat-form-field class="search-bar" appearance="outline">
+    <mat-label>Search Blogs</mat-label>
+    <input matInput placeholder="Type to search..." [(ngModel)]="searchTerm" (input)="filterPosts()" />
+    <button mat-button *ngIf="searchTerm" matSuffix mat-icon-button aria-label="Clear" (click)="clearSearch()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
 </mat-toolbar>
+
+
 
 <div class="container">
   <div class="video-grid">
