@@ -1,0 +1,54 @@
+<div class="container-fluid my-5">
+  <!-- Header Section -->
+  <div class="text-center py-5 bg-light rounded-3 shadow-sm">
+    <button mat-raised-button>Our blog</button>
+    <h3 class="mt-3" style="color: #42307D;">Resources and insights</h3>
+    <p style="color: #6941C6;">
+      The latest industry news, interviews, technologies, and resources.
+    </p>
+
+    <!-- Search -->
+    <div class="d-flex justify-content-center mt-4 flex-wrap">
+      <form [formGroup]="searchForm" class="w-100 w-sm-auto">
+        <mat-form-field appearance="fill" class="custom-search">
+          <mat-icon matPrefix>search</mat-icon>
+          <input matInput placeholder="Search" formControlName="search">
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Blog Cards -->
+<div class="container-fluid mt-5 card-section">
+  <div class="row">
+    <div 
+      class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" 
+      *ngFor="let card of filteredCards;let i=index"
+    >
+      <mat-card class="custom-card h-100"  style="cursor:pointer">
+        <mat-card-header>
+          <mat-card-title class="card-category">{{ card.category }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="card.image" alt="card image">
+        <mat-card-content>
+          <h5 class="card-title">{{ card.title }}</h5>
+          <p class="card-text">{{ card.description }}</p>
+        </mat-card-content>
+        <mat-card-footer class="card-footer d-flex align-items-center">
+          <img [src]="card.authorImage" class="author-img me-2" alt="author">
+          <small class="text-muted">{{ card.author }} • {{ card.date }}</small>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer mt-5 py-4 text-center text-white">
+  <div class="container">
+    <p class="mb-1">© 2025 My Blog. All rights reserved.</p>
+    <p class="mb-0">Love, <span class="footer-name">Dumb Dev❤️</span></p>
+  </div>
+</footer>
+
