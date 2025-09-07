@@ -1,0 +1,26 @@
+.container {
+  padding: 16px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.video-card {
+  cursor: pointer;
+}
+
+.video-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 8px 0 4px;
+}
+
+.video-channel,
+.video-stats {
+  font-size: 14px;
+  color: gray;
+  margin: 0;
+}
