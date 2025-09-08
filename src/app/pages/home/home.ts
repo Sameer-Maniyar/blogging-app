@@ -8,10 +8,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import { CommonModule } from '@angular/common'; 
 import { RouterModule } from '@angular/router';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-home',
- imports: [MatChipsModule,MatButtonModule,MatFormFieldModule,ReactiveFormsModule,MatInputModule,MatIconModule,MatCardModule,CommonModule,RouterModule],
+ imports: [MatChipsModule,MatButtonModule,MatFormFieldModule,ReactiveFormsModule,MatInputModule,MatIconModule,MatCardModule,CommonModule,RouterModule,MatSidenavModule,MatListModule,MatToolbarModule],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

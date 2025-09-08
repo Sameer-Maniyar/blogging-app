@@ -1,54 +1,73 @@
-<div class="container-fluid my-5">
-  <!-- Header Section -->
-  <div class="text-center py-5 bg-light rounded-3 shadow-sm">
-    <button mat-raised-button>Our blog</button>
-    <h3 class="mt-3" style="color: #42307D;">Resources and insights</h3>
-    <p style="color: #6941C6;">
-      The latest industry news, interviews, technologies, and resources.
-    </p>
+<mat-sidenav-container class="sidenav-container">
+  <!-- Sidebar (like ChatGPT) -->
+  <mat-sidenav #sidenav mode="side" class="sidenav" [opened]="false">
+    <div class="sidenav-header">
+      <h3>Dumb<span style="color:#6941C6">Dev</span></h3>
+    </div>
+   <mat-nav-list>
+  <a mat-list-item routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">🏠 Home</a>
+  <!-- <a mat-list-item routerLink="/blog" routerLinkActive="active-link">📰 Blog</a>
+  <a mat-list-item routerLink="/login" routerLinkActive="active-link">🔑 Login</a>
+  <a mat-list-item routerLink="/contact" routerLinkActive="active-link">📞 Contact</a> -->
+</mat-nav-list>
 
-    <!-- Search -->
-    <div class="d-flex justify-content-center mt-4 flex-wrap">
-      <form [formGroup]="searchForm" class="w-100 w-sm-auto">
-        <mat-form-field appearance="fill" class="custom-search">
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content>
+    <!-- Top Toolbar -->
+    <mat-toolbar color="primary" class="toolbar">
+      <button mat-icon-button (click)="sidenav.toggle()" class="me-2">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <!-- <span class="toolbar-title">Meta<span style="color:#E9D7FE">Blog</span></span> -->
+
+      <span class="spacer"></span>
+      <form [formGroup]="searchForm">
+        <mat-form-field appearance="outline" class="custom-search ">
           <mat-icon matPrefix>search</mat-icon>
           <input matInput placeholder="Search" formControlName="search">
         </mat-form-field>
       </form>
+      <!-- Search -->
+
+      <!-- Dark Mode -->
+      <!-- <button mat-icon-button>
+        <mat-icon>brightness_6</mat-icon>
+      </button> -->
+    </mat-toolbar>
+
+    <!-- Blog Cards -->
+    <div class="container-fluid mt-3 card-section">
+      <div class="row">
+        <div
+          class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
+          *ngFor="let card of filteredCards; let i=index"
+        >
+          <mat-card class="custom-card h-100" style="cursor:pointer">
+            <mat-card-header>
+              <mat-card-title class="card-category">{{ card.category }}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image [src]="card.image" alt="card image">
+            <mat-card-content>
+              <h5 class="card-title">{{ card.title }}</h5>
+              <p class="card-text">{{ card.description }}</p>
+            </mat-card-content>
+            <mat-card-footer class="card-footer d-flex align-items-center">
+              <img [src]="card.authorImage" class="author-img me-2" alt="author">
+              <small class="text-muted">{{ card.author }} • {{ card.date }}</small>
+            </mat-card-footer>
+          </mat-card>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<!-- Blog Cards -->
-<div class="container-fluid mt-5 card-section">
-  <div class="row">
-    <div 
-      class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" 
-      *ngFor="let card of filteredCards;let i=index"
-    >
-      <mat-card class="custom-card h-100"  style="cursor:pointer">
-        <mat-card-header>
-          <mat-card-title class="card-category">{{ card.category }}</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image [src]="card.image" alt="card image">
-        <mat-card-content>
-          <h5 class="card-title">{{ card.title }}</h5>
-          <p class="card-text">{{ card.description }}</p>
-        </mat-card-content>
-        <mat-card-footer class="card-footer d-flex align-items-center">
-          <img [src]="card.authorImage" class="author-img me-2" alt="author">
-          <small class="text-muted">{{ card.author }} • {{ card.date }}</small>
-        </mat-card-footer>
-      </mat-card>
-    </div>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="footer mt-5 py-4 text-center text-white">
-  <div class="container">
-    <p class="mb-1">© 2025 My Blog. All rights reserved.</p>
-    <p class="mb-0">Love, <span class="footer-name">Dumb Dev❤️</span></p>
-  </div>
-</footer>
-
+    <!-- Footer -->
+    <footer class="footer mt-5 py-4 text-center text-white">
+      <div class="container">
+        <p class="mb-1">© 2025 My Blog. All rights reserved.</p>
+        <p class="mb-0">Love, <span class="footer-name">Dumb Dev❤️</span></p>
+      </div>
+    </footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

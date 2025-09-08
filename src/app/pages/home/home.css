@@ -1,4 +1,4 @@
-/* search field */
+/* ------------------ Search Field ------------------ */
 .custom-search {
   width: 100%;
   max-width: 350px;
@@ -23,35 +23,40 @@
   color: #42307D;
 }
 
-/* card section background */
+
+/* ------------------ Featured Card ------------------ */
+.featured-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.featured-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: #fff;
+  padding: 20px;
+}
+
+
+/* ------------------ Blog Card Section ------------------ */
 .card-section {
   position: relative;
-  padding: 80px 20px;
+  padding: 30px 20px;
   z-index: 1;
-
   overflow: hidden;
   border-radius: 12px;
 }
 
-
-
-.card-section::before {
-  top: 11%;
-}
-
-.card-section::after {
-  top: 55%;
-  transform: rotate(-8deg);
-}
-
-/* blog card */
 .custom-card {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   background: #fff;
-  
 }
 
 .custom-card:hover {
@@ -59,14 +64,16 @@
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
 }
 
-/* category label */
+.custom-card img {
+  object-fit: cover;
+}
+
 .card-category {
   font-size: 0.9rem;
   font-weight: 600;
   color: #6941C6;
 }
 
-/* title */
 .card-title {
   font-size: 1.2rem;
   font-weight: 700;
@@ -74,7 +81,6 @@
   color: #42307D;
 }
 
-/* description */
 .card-text {
   font-size: 0.95rem;
   color: #555;
@@ -82,13 +88,6 @@
   line-height: 1.4;
 }
 
-.custom-card img {
-
-  object-fit: cover;
-}
-
-
-/* footer */
 .card-footer {
   border-top: 1px solid #eee;
   padding: 12px 16px;
@@ -101,9 +100,65 @@
   border-radius: 50%;
   object-fit: cover;
 }
+
+.active-link {
+  background-color: #ece7ff; /* highlight color */
+  color: #42307D; /* text color */
+  font-weight: 600;
+}
+
+.toolbar form {
+  display: flex;
+  align-items: center; /* vertically center the form */
+  height: 100%;
+}
+
+.custom-search {
+  height: 40px; /* slightly smaller than toolbar */
+  margin-bottom: 14px; /* remove auto margin */
+}
+
+::ng-deep .custom-search .mat-form-field-flex {
+  height: 100%; /* match the form height */
+  padding: 0 2px;
+  border-radius: 48px !important;
+  background: #F9F5FF;
+}
+
+
+
+
+/* ------------------ Sidenav ------------------ */
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 220px;
+  padding-top: 20px;
+  background: #fff;
+  border-right: 1px solid #eee;
+}
+
+mat-sidenav-content {
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+mat-nav-list a {
+  font-weight: 500;
+  color: #333;
+}
+
+mat-nav-list a:hover {
+  background: #ece7ff;
+  color: #42307D;
+}
+
+
+/* ------------------ Footer ------------------ */
 .footer {
    background: linear-gradient(135deg, #6941C6, #E9D7FE);
-
 }
 
 .footer p {
@@ -117,17 +172,38 @@
   color: #F9F5FF;
 }
 
-@media (max-width: 768px) {
-  .footer p {
-    font-size: 0.85rem;
-  }
+
+
+
+
+
+/* Toolbar */
+.toolbar {
+
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+
+.toolbar-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+
 
 
 /* ------------------ Responsive ------------------ */
 @media (max-width: 1200px) {
   .card-section {
-    padding: 60px 16px;
+    padding: 20px 16px;
   }
   .card-title {
     font-size: 1.1rem;
@@ -142,13 +218,16 @@
     max-width: 300px;
   }
   .card-section {
-    padding: 50px 12px;
+    padding: 20px 12px;
   }
   .card-title {
     font-size: 1rem;
   }
   .card-text {
     font-size: 0.88rem;
+  }
+  .sidenav {
+    width: 110px;
   }
 }
 
@@ -167,6 +246,9 @@
   }
   .card-text {
     font-size: 0.85rem;
+  }
+  .sidenav {
+     width: 140px;/* Hide sidenav on tablet/mobile */
   }
 }
 
@@ -187,4 +269,18 @@
   .card-text {
     font-size: 0.8rem;
   }
+   .toolbar {
+    padding: 0 10px;
+  }
+  .toolbar-title {
+    font-size: 1rem;
+  }
+   .sidenav {
+     width: 110px;/* Hide sidenav on tablet/mobile */
+  }
+  
 }
+
+
+
+
