@@ -44,7 +44,7 @@
           class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
           *ngFor="let card of filteredCards; let i=index"
         >
-          <mat-card class="custom-card h-100" style="cursor:pointer">
+          <!-- <mat-card class="custom-card h-100" style="cursor:pointer">
             <mat-card-header>
               <mat-card-title class="card-category">{{ card.category }}</mat-card-title>
             </mat-card-header>
@@ -57,7 +57,22 @@
               <img [src]="card.authorImage" class="author-img me-2" alt="author">
               <small class="text-muted">{{ card.author }} • {{ card.date }}</small>
             </mat-card-footer>
-          </mat-card>
+          </mat-card> -->
+          <mat-card class="custom-card h-100 mt-4">
+  <div class="card-img-wrapper">
+    <img mat-card-image [src]="card.image" alt="card image">
+    <span class="badge-category">{{ card.category }}</span>
+  </div>
+  <mat-card-content>
+    <h5 class="card-title">{{ card.title }}</h5>
+    <p class="card-text">{{ card.description }}</p>
+  </mat-card-content>
+  <mat-card-footer class="card-footer d-flex align-items-center">
+    <img [src]="card.authorImage" class="author-img me-2" alt="author">
+    <small class="text-muted">{{ card.author }} • {{ card.date }}</small>
+  </mat-card-footer>
+</mat-card>
+
         </div>
       </div>
     </div>

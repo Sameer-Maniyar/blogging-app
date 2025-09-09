@@ -43,52 +43,64 @@
 
 
 /* ------------------ Blog Card Section ------------------ */
-.card-section {
-  position: relative;
-  padding: 30px 20px;
-  z-index: 1;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
+/* Card wrapper */
 .custom-card {
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
   background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .custom-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-.custom-card img {
+/* Image wrapper for badge */
+.card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img-wrapper img {
   object-fit: cover;
+  height: 180px;
+  width: 100%;
 }
 
-.card-category {
-  font-size: 0.9rem;
+/* Category badge */
+.badge-category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #6941C6;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 12px;
   font-weight: 600;
-  color: #6941C6;
 }
 
+/* Title & text */
 .card-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-top: 8px;
-  color: #42307D;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 10px 0 6px;
+  color: #222;
 }
-
 .card-text {
   font-size: 0.95rem;
   color: #555;
-  margin-top: 6px;
   line-height: 1.4;
+  margin-bottom: 0;
 }
 
+/* Footer */
 .card-footer {
+  margin-top: auto; /* Push footer down */
   border-top: 1px solid #eee;
   padding: 12px 16px;
   background: #fafafa;
@@ -235,14 +247,11 @@ mat-nav-list a:hover {
   .custom-search {
     max-width: 250px;
   }
-  .card-section {
-    padding: 40px 12px;
-  }
-  .custom-card {
-    margin: 12px;
+ .card-img-wrapper img {
+    height: 150px;
   }
   .card-title {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
   .card-text {
     font-size: 0.85rem;
