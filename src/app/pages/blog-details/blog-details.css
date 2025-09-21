@@ -1,0 +1,113 @@
+.blog-details {
+  padding: 24px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.dialog-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.dialog-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.dialog-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+
+.blog-detail-container {
+  padding: 0px;
+  height: 100%;
+  overflow-y: auto; /* scroll only inside the dialog */
+}
+
+.blogDetailBox{
+  background-color: #fff0d6;
+  padding: 10px 0;
+  border-radius: 15px;
+}
+
+.container{
+  margin: 0 auto;
+}
+
+.caste-team h1 {
+    color: #000;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.synopsis-details {
+    padding: 30px 0;
+}
+
+.synopsis-details p {
+    color: #000;
+    font-size: 14px;
+    margin: 0;
+}
+
+ul {
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.actions ul li {
+    float: left;
+    list-style: none;
+}
+
+.actions ul li a {
+    align-items: center;
+    color: #000;
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.dot-ss {
+    /* background-color: #000; */
+    display: inline-block;
+    height: 4px;
+    margin-left: 8px;
+    margin-right: 6px;
+    width: 4px;
+}
+
+h1, h2 {
+    font-family: Poppins,sans-serif;
+}
+
+.view-container {
+    margin: 0 auto;
+    width: 1400px;
+}
+
+.ptb-40 {
+    padding: 30px 0;
+}
+
+.crew-head h3 {
+    color: #000;
+    font-size: 13.5px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+

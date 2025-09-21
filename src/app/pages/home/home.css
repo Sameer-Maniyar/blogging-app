@@ -1,45 +1,108 @@
-/* ------------------ Search Field ------------------ */
-.custom-search {
-  width: 100%;
-  max-width: 350px;
-  background: #F9F5FF;
-  border-radius: 8px;
-  margin: 0 auto;
+/* BBC logo style */
+.bbc-logo {
+  background: #1E3A8A;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin: 0 2px;
+  font-size: 24px;
 }
 
-.custom-search .mat-form-field-flex {
-  padding: 0 12px;
-  height: 48px;
-  border-radius: 8px;
-  background: #F9F5FF;
-}
-
-.custom-search .mat-form-field-outline {
-  display: none; /* remove default outline */
-}
-
-.custom-search input {
-  font-size: 0.95rem;
-  color: #42307D;
-}
-
-
-/* ------------------ Featured Card ------------------ */
-.featured-card {
+/* Bottom nav links */
+.bbc-nav .nav-link {
+  color: black;
+  font-weight: 500;
+  padding: 10px 15px;
   position: relative;
-  border-radius: 12px;
-  overflow: hidden;
 }
 
-.featured-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-  color: #fff;
-  padding: 20px;
+.bbc-nav .nav-link:hover {
+  color: #000;
 }
+
+.active-link > .nav-link {
+  font-weight: bold;
+  color: black;
+}
+
+.active-link > .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: black;
+}
+
+
+/* Sidebar base */
+.bbc-sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px; /* Hidden by default */
+  width: 280px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+  overflow-y: auto;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+/* Open state */
+.bbc-sidebar.open {
+  left: 0;
+}
+
+/* Sidebar header */
+.sidebar-header h5 {
+  margin: 0;
+}
+
+.close-btn {
+  font-size: 1.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Sidebar links */
+.bbc-sidebar .sidebar-nav li a {
+  display: block;
+  padding: 0.8rem 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.bbc-sidebar .sidebar-nav li a:hover {
+  background: #f0f0f0;
+}
+
+/* Overlay */
+.bbc-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 900;
+}
+
+.bbc-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+
+
+
 
 
 /* ------------------ Blog Card Section ------------------ */
@@ -113,11 +176,7 @@
   object-fit: cover;
 }
 
-.active-link {
-  background-color: #ece7ff; /* highlight color */
-  color: #42307D; /* text color */
-  font-weight: 600;
-}
+
 
 .toolbar form {
   display: flex;
@@ -125,56 +184,37 @@
   height: 100%;
 }
 
-.custom-search {
-  height: 40px; /* slightly smaller than toolbar */
-  margin-bottom: 14px; /* remove auto margin */
-}
 
-::ng-deep .custom-search .mat-form-field-flex {
-  height: 100%; /* match the form height */
-  padding: 0 2px;
-  border-radius: 48px !important;
-  background: #F9F5FF;
-}
+
+
+/* ::ng-deep .mat-mdc-form-field-flex {
+    display: inline-flex;
+    align-items: baseline;
+    box-sizing: border-box;
+    width: 60%;
+    height: 40px !important;
+} */
+
+
 
 
 
 
 /* ------------------ Sidenav ------------------ */
-.sidenav-container {
-  height: 100vh;
-}
 
-.sidenav {
-  width: 220px;
-  padding-top: 20px;
-  background: #fff;
-  border-right: 1px solid #eee;
-}
 
-mat-sidenav-content {
-  background: #f9f9f9;
-  min-height: 100vh;
-}
-
-mat-nav-list a {
-  font-weight: 500;
-  color: #333;
-}
-
-mat-nav-list a:hover {
-  background: #ece7ff;
-  color: #42307D;
-}
 
 
 /* ------------------ Footer ------------------ */
 .footer {
-   background: linear-gradient(135deg, #6941C6, #E9D7FE);
+  background: linear-gradient(135deg, #6941C6, #E9D7FE);
+  text-align: center;
+  padding: 16px;
+  margin-top: auto ; 
 }
 
 .footer p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #fff;
   margin: 0;
 }
@@ -183,8 +223,6 @@ mat-nav-list a:hover {
   font-weight: 700;
   color: #F9F5FF;
 }
-
-
 
 
 
@@ -208,6 +246,8 @@ mat-nav-list a:hover {
 .spacer {
   flex: 1 1 auto;
 }
+
+
 
 
 
