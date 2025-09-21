@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GitHead } from './git-head';
+import { Header } from './header';
 
-describe('GitHead', () => {
-  let component: GitHead;
-  let fixture: ComponentFixture<GitHead>;
+describe('Header', () => {
+  let component: Header;
+  let fixture: ComponentFixture<Header>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GitHead]
+      imports: [Header]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GitHead);
+    fixture = TestBed.createComponent(Header);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

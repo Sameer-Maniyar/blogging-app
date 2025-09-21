@@ -1,15 +1,124 @@
-<div class="blog-detail-container">
-  <!-- Close button -->
-  <!-- <button mat-icon-button class="close-btn" (click)="dialogRef.close()">
-    <mat-icon>close</mat-icon>
-  </button> -->
+<app-header></app-header>
+@if(card){
 
-  <!-- Title -->
-
-  <div class="blogDetailBox">
-   
+  <div class="container">
+  
+    <article class="blog-article">
+    
+      <section id="intro">
+        <!-- <h2>Introduction</h2> -->
+        <p>
+          <strong>HEAD</strong> and <strong>DETACHED HEAD</strong> are fundamental Git concepts that can
+          transform how you manage your codebase. Understanding HEAD allows you to recover from mistakes quickly.
+        </p>
+        <p>
+          Before moving ahead, let’s look at a few commands that use HEAD. You must first understand what Git HEAD is.
+        </p>
+  
+        <pre class="code-block"><code>
+  git checkout HEAD~1
+  git reset HEAD^1 --soft
+  git reset HEAD^1 --hard
+  git diff HEAD
+  git reflog
+        </code></pre>
+      </section>
+  
+     
+      <section id="git-head">
+        <h2>What is Git HEAD?</h2>
+        <p>
+          Imagine each commit as a page in a book. <strong>HEAD</strong> acts as a bookmark showing your current page.
+          You can flip to any page, but HEAD points where you are currently working.
+        </p>
+        <div class="image-container">
+          <div class="image-block">
+            <img src="git-head-images/Untitled.001.jpeg" alt="Commit history">
+            <p>Actual commit history</p>
+          </div>
+          <div class="image-block">
+            <img src="git-head-images/headPointingLastCommit.png" alt="Visual commit history">
+            <p>Visualization of commit history</p>
+          </div>
+        </div>
+        <p>
+          The images above show two branches, <strong>main</strong> and <strong>feature</strong>, with four commits.
+        </p>
+      </section>
+  
+      
+      <section id="commit-hash">
+        <h2>Commit Hash</h2>
+        <p>
+          Every commit has a unique string called a <strong>commit hash</strong>. It helps identify commits uniquely.
+        </p>
+        <pre class="code-block"><code>
+  git log
+  git log --oneline
+        </code></pre>
+        <div class="image-container">
+          <div class="image-block">
+            <img src="git-head-images/highlited_commit_has.001.jpeg" alt="Commit Hash example">
+            <p>Commit Hash</p>
+          </div>
+          <div class="image-block">
+            <img src="git-head-images/commit hash.gif" alt="Detached HEAD example">
+            <p>Detached HEAD example</p>
+          </div>
+        </div>
+      </section>
+  
+      
+      <section id="detached-head">
+        <h2>Detached HEAD</h2>
+        <p>
+          When HEAD points to a commit other than the latest in a branch, it’s in a <strong>Detached HEAD state</strong>.
+        </p>
+        <p>
+          <strong>Analogy:</strong> Imagine flipping to an earlier page in a book. You can read or write from there without moving the main bookmark.
+        </p>
+        <pre class="code-block"><code>
+  git checkout &lt;commit-hash&gt;
+  git checkout -b new-branch
+        </code></pre>
+  
+        <div class="image-container">
+          <div class="image-block">
+            <img src="git-head-images/branching_head_gif.gif" alt="Branching from detached HEAD">
+            <p>Branching off from detached HEAD</p>
+          </div>
+          <div class="image-block">
+            <img src="git-head-images/moving_head_gif.gif" alt="HEAD travels through commits">
+            <p>HEAD moving through commits</p>
+          </div>
+        </div>
+      </section>
+  
+     
+      <section id="best-practices">
+        <h2>Best Practices</h2>
+        <ul>
+          <li>Check whether HEAD is attached or detached before committing.</li>
+          <li>Use <code>git reflog</code> to see HEAD history.</li>
+          <li>Create short-lived branches for experiments.</li>
+          <li>Double-check commands that move HEAD (<code>git reset</code>, <code>git checkout</code>).</li>
+        </ul>
+      </section>
+  
+      
+      <section id="conclusion">
+        <h2>Conclusion</h2>
+        <p>In one sentence: <strong>HEAD</strong> is where you are in Git history.</p>
+      </section>
+    </article>
+  
+  
+    <div class="author-block">
+      <div class="author-info">
+        <span>Sameer M.</span>
+        <p>Developer | Git Enthusiast</p>
+      </div>
+    </div>
+  
   </div>
-
-
-
-</div>
+}

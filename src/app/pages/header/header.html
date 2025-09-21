@@ -1,0 +1,109 @@
+<header class="bbc-header mt-3">
+  <div class="top-bar d-flex justify-content-between align-items-center px-3">
+
+    <div class="d-flex align-items-center">
+
+
+      <button (click)="toggleSidebar()" class="example-icon"
+        style="background-color: #fff; border: none; cursor: pointer;">
+        <mat-icon class="fs-4">menu</mat-icon>
+        <mat-icon class="fs-4">search</mat-icon>
+      </button>
+
+    </div>
+    <!-- Logo -->
+    <div class="logo text-center">
+      <span class="bbc-logo">D</span>
+      <span class="bbc-logo accent">U</span>
+      <span class="bbc-logo">M</span>
+      <span class="bbc-logo">B</span>
+
+
+    </div>
+
+    <!-- Right actions -->
+    <div class="d-flex align-items-center">
+   
+
+    </div>
+  </div>
+
+  <!-- Bottom nav -->
+  <nav class="bbc-nav border-top mt-4">
+    <ul class="nav justify-content-center">
+      <li class="nav-item" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active-link">
+        <a class="nav-link" routerLink="/news">News</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active-link">
+        <a class="nav-link" routerLink="/sport">Sport</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active-link">
+        <a class="nav-link" routerLink="/business">Business</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active-link">
+        <a class="nav-link" routerLink="/innovation">Innovation</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active-link">
+        <a class="nav-link" routerLink="/culture">Culture</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active-link">
+        <a class="nav-link" routerLink="/arts">Arts</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active-link">
+        <a class="nav-link" routerLink="/travel">Travel</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active-link">
+        <a class="nav-link" routerLink="/earth">Earth</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+<div id="bbcSidebar" [class.open]="isSidebarOpen" class="bbc-sidebar">
+  
+  <!-- Close button at top right -->
+  <button (click)="closeSidebar()" class="close-btn">
+    <mat-icon class="fs-4" >clear</mat-icon>
+  </button>
+
+  <!-- Sidebar Search -->
+  <div class="sidebar-search px-3 py-4">
+    <form class="example-form" [formGroup]="searchForm">
+      <mat-form-field appearance="outline" class="example-full-width w-100">
+  <mat-label>Search</mat-label>
+  <!-- <input matInput name="search" [(ngModel)]="searchText"  (keyup.enter)="applySearch()"> -->
+    <input matInput formControlName="search">
+
+  <!-- Search icon when input empty -->
+
+  @if(!searchForm.get('search')?.value){
+
+    <button mat-icon-button  matSuffix>
+      <mat-icon>search</mat-icon>
+    </button>
+  }
+
+  <!-- @if(searchForm.get('search')?.value){
+
+    <button mat-icon-button  matSuffix (click)="clearSearch()">
+      <mat-icon>close</mat-icon>
+    </button>
+  } -->
+
+  <!-- Clear icon when input has text -->
+</mat-form-field>
+
+    </form>
+  </div>
+
+  <!-- Nav links -->
+  <ul class="sidebar-nav list-unstyled px-2">
+    <li><a routerLink="/"><b>Home</b></a></li>
+    <li><a routerLink="/news"><b>News</b></a></li>
+    <li><a routerLink="/sport"><b>Sport</b></a></li>
+  </ul>
+</div>

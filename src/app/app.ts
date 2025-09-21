@@ -8,9 +8,11 @@ import {MatListModule} from '@angular/material/list';
 
 @Component({
   selector: 'app-root',
+  
   imports: [RouterOutlet,MatSidenavModule,MatListModule],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  
 })
 export class App  {}
 

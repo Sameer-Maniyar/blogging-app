@@ -1,24 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { BlogDetails } from '../blog-details/blog-details';
+import { Component } from '@angular/core';
+import { ReactiveFormsModule, FormsModule, FormBuilder, FormGroup } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { Router, RouterModule } from '@angular/router';
 import { CardService } from '../card-service';
-import { Header } from "../header/header";
 
 @Component({
-  selector: 'app-home',
-  imports: [
+  selector: 'app-header',
+  
+   imports: [
     MatChipsModule,
     MatButtonModule,
     MatFormFieldModule,
@@ -31,13 +30,13 @@ import { Header } from "../header/header";
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
-    FormsModule,
-    Header
-],
-  templateUrl: './home.html',
-  styleUrl: './home.css',
+    FormsModule
+  ],
+  templateUrl: './header.html',
+  styleUrl: './header.css'
 })
-export class Home implements OnInit {
+export class Header {
+
 
   searchForm!:FormGroup
 
@@ -77,29 +76,15 @@ intilizeForm(){
 });
 }
 
-
-openBlogDetails(card:any){
-  this.router.navigate(['/blog', card.id]);
-}
-
-
-
-
-
-isSidebarOpen = false;
+  isSidebarOpen = false;
 
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
   }
 
-   closeSidebar() {
+  closeSidebar() {
     this.isSidebarOpen = false;
   }
+  
 
-  searchText: string = '';
-
-clearSearch() {
-  this.searchText = '';
-  this.filteredCards = [...this.cards]; // reset
-}
 }

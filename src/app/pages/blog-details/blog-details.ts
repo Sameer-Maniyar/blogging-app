@@ -11,24 +11,32 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { CardService } from '../card-service';
+import { Header } from "../header/header";
 
 @Component({
   selector: 'app-blog-details',
-   imports: [MatChipsModule,MatButtonModule,MatFormFieldModule,ReactiveFormsModule,MatInputModule,MatIconModule,MatCardModule,CommonModule,RouterModule,MatSidenavModule,MatListModule,MatToolbarModule],
+   imports: [MatChipsModule, MatButtonModule, MatFormFieldModule, ReactiveFormsModule, MatInputModule, MatIconModule, MatCardModule, CommonModule, RouterModule, MatSidenavModule, MatListModule, MatToolbarModule, Header],
   templateUrl: './blog-details.html',
   styleUrl: './blog-details.css'
 })
 export class BlogDetails {
 
-  constructor(
-    public dialogRef: MatDialogRef<BlogDetails>,
-    @Inject(MAT_DIALOG_DATA) public data: any
-  ) {}
+ 
+ card:any
+ cardId:any
 
-  ngOnInit(){
-    console.log(this.data);
+  constructor(private route: ActivatedRoute,private cardService: CardService) {}
+
+  ngOnInit(): void {
+     this.cardId = +this.route.snapshot.paramMap.get('id')!;
+    this.card = this.cardService.getCardById(this.cardId);
+    console.log(this.card,this.cardId);
     
+    // Fetch card details using this.cardId
   }
+
+
 
 }
