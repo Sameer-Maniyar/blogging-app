@@ -151,7 +151,7 @@
 .card-title {
   font-size: 1.15rem;
   font-weight: 600;
-  margin: 10px 0 6px;
+  margin: 10px 0 2px;
   color: #222;
 }
 .card-text {
@@ -288,7 +288,7 @@
     max-width: 250px;
   }
  .card-img-wrapper img {
-    height: 150px;
+    height: 180px;
   }
   .card-title {
     font-size: 1rem;
