@@ -16,18 +16,28 @@ export class CardService {
     description: 'A short, simple guide that mixes practical commands, diagrams and the mistakes I learned from — perfect for beginners.',
     author: 'Sameer M',
     date: '21 sept 2025',
-    authorImage: 'dummyImage.png'
+    authorImage: 'https://randomuser.me/api/portraits/men/10.jpg'
   },
+  // {
+  //   id:2,
+  //   image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2',
+  //   category: 'Development',
+  //   title: 'Best practices for code reviews',
+  //   description: 'Discover techniques to ensure high quality and maintainable code through effective peer reviews.',
+  //   author: 'Michael Scott',
+  //   date: '10 Feb 2022',
+  //   authorImage: 'https://randomuser.me/api/portraits/men/2.jpg'
+  // },
   {
-    id:2,
-    image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2',
-    category: 'Development',
-    title: 'Best practices for code reviews',
-    description: 'Discover techniques to ensure high quality and maintainable code through effective peer reviews.',
-    author: 'Michael Scott',
-    date: '10 Feb 2022',
-    authorImage: 'https://randomuser.me/api/portraits/men/2.jpg'
-  },
+  id: 2,
+  image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2',   // Replace with your blog thumbnail/illustration
+  category: 'Job Loss',                  // Category of the blog
+  title: '“Comfort is a trap”',
+  description: 'Reflections after nearly 15 years at the same company — facing layoffs, job insecurity, and lessons learned.', 
+  author: 'VS',                          // Your author name/initials
+  date: '25 Sep 2025',                   // Blog date
+  authorImage: 'https://randomuser.me/api/portraits/men/2.jpg' // Your profile/author avatar
+}
   // {
   //   id:3,
   //   image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',

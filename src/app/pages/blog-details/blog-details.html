@@ -1,190 +1,312 @@
 <app-header></app-header>
-@if(card){
+
 
   <div class="container">
-  
-    <article class="blog-article">
-    
-      <section id="intro">
-        <!-- <h2>Introduction</h2> -->
-                  <p>
-                    <strong>HEAD</strong> and <strong>DETACHED HEAD</strong>
-                    Believe it or not, mastering these concepts can transform the way you work and the way you manage
-                    your codebase. I think HEAD is one of the power full concept in git that every coder must understand
-                    .
-                    if you aleady have some idea what it is then you will agree with me that whenever you make a
-                    mistake, u can solve it within a minute .
 
-                </p>
-                 <p>
-                 Before moving ahead, let’s look at a few commands that use HEAD. If you want to understand these
-                commands, you must first understand what Git HEAD is first.
-                </p>
-  
-        <pre class="code-block"><code>
-  git checkout HEAD~1
-  git reset HEAD^1 --soft
-  git reset HEAD^1 --hard
-  git diff HEAD
-  git reflog
-        </code></pre>
-      </section>
-  
-     
-      <section id="git-head">
-        <h2><br> What is Git HEAD ?</h2>
-                <p>
-                    Imagine you are writing a book, and each page you write is a new commit. In this analogy,
-                    <strong>HEAD</strong> acts
-                    as a bookmark that shows you which page (commit) you are currently on. As you flip through the
-                    pages, HEAD moves
-                    with you, pointing to the current page. You can also jump to any page to see its content.
-                </p>
-                <p>
-                    One important difference from real life: when you read a physical book, you only see the content of
-                    the page you're
-                    on. In Git, however, when HEAD points to a commit, now being at head pointing to that commit you can
-                    see content of
-                    all previous chnages.
-                </p>
-        <div class="image-container">
-          <div class="image-block">
-            <img src="git-head-images/Untitled.001.jpeg" alt="Commit history">
-            <p>Actual commit history 1.1</p>
-          </div>
-          <div class="image-block">
-            <img src="git-head-images/headPointingLastCommit.png" alt="Visual commit history">
-            <p>Visualization of commit history 1.2</p>
-          </div>
-        </div>
-        <p>
-                    above images shows the actual commit history, observe there are total 2 branches, <strong>
-                        main</strong> and
-                    <strong>feature</strong> and there are four commits (image 1.1), in actual image,
-                    commit are arranged from bottom to top.
-                </p>
+    @if(card.id == 1){
 
-                <p>
-                    I want to highlight one more thing, in image 1.1 you see <strong>main</strong> and
-                    <strong>feature</strong> branch,
-                    and in 1.2 image <strong>master</strong> and <strong>feature</strong> dont get confuse consider them
-                    as same, cause
-                    I created these images on diffent day and I dont want to change as I am lousy
-                </p>
-
-                <p>
-                    Just in case if you don’t know how to check commit history, you can use the following commands:
-                </p>
-      </section>
-  
+      <article class="blog-article">
       
-      <section id="commit-hash">
-        <h2>Commit Hash</h2>
-        <p>
-          Every commit has a unique string called a <strong>commit hash</strong>. It helps identify commits uniquely.
-        </p>
-        <pre class="code-block"><code>
-  git log
-  git log --oneline
-        </code></pre>
-        <div class="image-container">
-          <div class="image-block">
-            <img src="git-head-images/highlited_commit_has.001.jpeg" alt="Commit Hash example">
-            <p>Commit Hash</p>
-          </div>
-          <div class="image-block">
-            <img src="git-head-images/commit hash.gif" alt="Detached HEAD example">
-            <p>Detached HEAD example</p>
-          </div>
-        </div>
-
-               <div style="flex:1; background:#f4f6f9; border:1px solid #000000; border-radius:8px; padding:15px; font-size:16px; line-height:1.6; color:#444; word-wrap: break-word; overflow-wrap: break-word; white-space: normal;">
-                  <p>
-                    The highlighted squares show a unique string called a <strong>commit hash</strong>.
-                    Every commit in Git is assigned a unique hash to identify it. <br><br>
-                    <code>git log :</code> shows the complete hash (about 50 characters), <br>
-                    <code>git log --oneline :</code> displays a shorter version using only the first 7 characters of
-                    hash code.
+        <section id="intro">
+          <!-- <h2>Introduction</h2> -->
+                    <p>
+                      <strong>HEAD</strong> and <strong>DETACHED HEAD</strong>
+                      Believe it or not, mastering these concepts can transform the way you work and the way you manage
+                      your codebase. I think HEAD is one of the power full concept in git that every coder must understand
+                      .
+                      if you aleady have some idea what it is then you will agree with me that whenever you make a
+                      mistake, u can solve it within a minute .
+  
                   </p>
-                </div>
-      </section>
-  
-      
-      <section id="detached-head">
-        <div style="margin: 20px 0; line-height:1.6; font-family: Arial, sans-serif;">
-
-                    <p>
-                        If <strong>HEAD</strong> is just a pointer or bookmark pointing to a particular commit, then
-                        what is a
-                        <strong>Detached HEAD</strong>? 🤔
-                        Well, when HEAD points to a commit other than the latest one in a branch, it is said to be in a
-                        <strong>Detached HEAD state</strong>.
-                    </p>
-
-                    <p>
-                        <strong>Analogy:</strong><br>
-                        Imagine you’re reading a big book where each <em>page = a commit</em>.
-                        Normally, you have a <strong>bookmark (HEAD)</strong> pointing to the last page you’re working
-                        on, so when you keep writing new pages (commits), they are added after the bookmark.
-                        <br><br>
-                        <strong>Normal HEAD:</strong> Bookmark on the last page → new pages always continue the story.
-                        <br><br>
-                        <strong>Detached HEAD:</strong>
-                        Suppose you remove your bookmark and flip to page 50 just to read it.
-                        You are not moving the bookmark—you’re just looking at that page.
-                        If you start writing new pages from there, they’re not attached to the main storyline (branch).
-                        It’s like writing alternate endings in a side notebook, without disturbing the main book.
-                    </p>
-
-                    <p>
-                        <strong>Why is this important?</strong><br>
-                        Detached HEAD is super useful when experimenting with new features. You can check out any commit
-                        and branch off from there. also it get handy if you want to checkout some random commit
-                        conntent.
-                    </p>
-        </div>
-        <pre class="code-block"><code>
-  git checkout &lt;commit-hash&gt;
-  git checkout -b new-branch
-        </code></pre>
-  
-        <div class="image-container">
-          <div class="image-block">
-            <img src="git-head-images/branching_head_gif.gif" alt="Branching from detached HEAD">
-            <p>Branching off from detached HEAD</p>
+                   <p>
+                   Before moving ahead, let’s look at a few commands that use HEAD. If you want to understand these
+                  commands, you must first understand what Git HEAD is first.
+                  </p>
+    
+          <pre class="code-block"><code>
+    git checkout HEAD~1
+    git reset HEAD^1 --soft
+    git reset HEAD^1 --hard
+    git diff HEAD
+    git reflog
+          </code></pre>
+        </section>
+    
+       
+        <section id="git-head">
+          <h2><br> What is Git HEAD ?</h2>
+                  <p>
+                      Imagine you are writing a book, and each page you write is a new commit. In this analogy,
+                      <strong>HEAD</strong> acts
+                      as a bookmark that shows you which page (commit) you are currently on. As you flip through the
+                      pages, HEAD moves
+                      with you, pointing to the current page. You can also jump to any page to see its content.
+                  </p>
+                  <p>
+                      One important difference from real life: when you read a physical book, you only see the content of
+                      the page you're
+                      on. In Git, however, when HEAD points to a commit, now being at head pointing to that commit you can
+                      see content of
+                      all previous chnages.
+                  </p>
+          <div class="image-container">
+            <div class="image-block">
+              <img src="git-head-images/Untitled.001.jpeg" alt="Commit history">
+              <p>Actual commit history 1.1</p>
+            </div>
+            <div class="image-block">
+              <img src="git-head-images/headPointingLastCommit.png" alt="Visual commit history">
+              <p>Visualization of commit history 1.2</p>
+            </div>
           </div>
-          <div class="image-block">
-            <img src="git-head-images/moving_head_gif.gif" alt="HEAD travels through commits">
-            <p>HEAD moving through commits</p>
+          <p>
+                      above images shows the actual commit history, observe there are total 2 branches, <strong>
+                          main</strong> and
+                      <strong>feature</strong> and there are four commits (image 1.1), in actual image,
+                      commit are arranged from bottom to top.
+                  </p>
+  
+                  <p>
+                      I want to highlight one more thing, in image 1.1 you see <strong>main</strong> and
+                      <strong>feature</strong> branch,
+                      and in 1.2 image <strong>master</strong> and <strong>feature</strong> dont get confuse consider them
+                      as same, cause
+                      I created these images on diffent day and I dont want to change as I am lousy
+                  </p>
+  
+                  <p>
+                      Just in case if you don’t know how to check commit history, you can use the following commands:
+                  </p>
+        </section>
+    
+        
+        <section id="commit-hash">
+          <h2>Commit Hash</h2>
+          <p>
+            Every commit has a unique string called a <strong>commit hash</strong>. It helps identify commits uniquely.
+          </p>
+          <pre class="code-block"><code>
+    git log
+    git log --oneline
+          </code></pre>
+          <div class="image-container">
+            <div class="image-block">
+              <img src="git-head-images/highlited_commit_has.001.jpeg" alt="Commit Hash example">
+              <p>Commit Hash</p>
+            </div>
+            <div class="image-block">
+              <img src="git-head-images/commit hash.gif" alt="Detached HEAD example">
+              <p>Detached HEAD example</p>
+            </div>
           </div>
+  
+                 <div style="flex:1; background:#f4f6f9; border:1px solid #000000; border-radius:8px; padding:15px; font-size:16px; line-height:1.6; color:#444; word-wrap: break-word; overflow-wrap: break-word; white-space: normal;">
+                    <p>
+                      The highlighted squares show a unique string called a <strong>commit hash</strong>.
+                      Every commit in Git is assigned a unique hash to identify it. <br><br>
+                      <code>git log :</code> shows the complete hash (about 50 characters), <br>
+                      <code>git log --oneline :</code> displays a shorter version using only the first 7 characters of
+                      hash code.
+                    </p>
+                  </div>
+        </section>
+    
+        
+        <section id="detached-head">
+          <div style="margin: 20px 0; line-height:1.6; font-family: Arial, sans-serif;">
+  
+                      <p>
+                          If <strong>HEAD</strong> is just a pointer or bookmark pointing to a particular commit, then
+                          what is a
+                          <strong>Detached HEAD</strong>? 🤔
+                          Well, when HEAD points to a commit other than the latest one in a branch, it is said to be in a
+                          <strong>Detached HEAD state</strong>.
+                      </p>
+  
+                      <p>
+                          <strong>Analogy:</strong><br>
+                          Imagine you’re reading a big book where each <em>page = a commit</em>.
+                          Normally, you have a <strong>bookmark (HEAD)</strong> pointing to the last page you’re working
+                          on, so when you keep writing new pages (commits), they are added after the bookmark.
+                          <br><br>
+                          <strong>Normal HEAD:</strong> Bookmark on the last page → new pages always continue the story.
+                          <br><br>
+                          <strong>Detached HEAD:</strong>
+                          Suppose you remove your bookmark and flip to page 50 just to read it.
+                          You are not moving the bookmark—you’re just looking at that page.
+                          If you start writing new pages from there, they’re not attached to the main storyline (branch).
+                          It’s like writing alternate endings in a side notebook, without disturbing the main book.
+                      </p>
+  
+                      <p>
+                          <strong>Why is this important?</strong><br>
+                          Detached HEAD is super useful when experimenting with new features. You can check out any commit
+                          and branch off from there. also it get handy if you want to checkout some random commit
+                          conntent.
+                      </p>
+          </div>
+          <pre class="code-block"><code>
+    git checkout &lt;commit-hash&gt;
+    git checkout -b new-branch
+          </code></pre>
+    
+          <div class="image-container">
+            <div class="image-block">
+              <img src="git-head-images/branching_head_gif.gif" alt="Branching from detached HEAD">
+              <p>Branching off from detached HEAD</p>
+            </div>
+            <div class="image-block">
+              <img src="git-head-images/moving_head_gif.gif" alt="HEAD travels through commits">
+              <p>HEAD moving through commits</p>
+            </div>
+          </div>
+        </section>
+    
+       
+        <section id="best-practices">
+          <h2>Best Practices</h2>
+          <ul>
+            <li>Check whether HEAD is attached or detached before committing.</li>
+            <li>Use <code>git reflog</code> to see HEAD history.</li>
+            <li>Create short-lived branches for experiments.</li>
+            <li>Double-check commands that move HEAD (<code>git reset</code>, <code>git checkout</code>).</li>
+          </ul>
+        </section>
+    
+        
+        <section id="conclusion">
+          <h2>Conclusion</h2>
+          <p>In one sentence: <strong>HEAD</strong> is where you are in Git history.</p>
+        </section>
+      </article>
+    
+      <div class="author-block">
+        <div class="author-info">
+          <span>Sameer M.</span>
+          <p>Developer | Git Enthusiast</p>
         </div>
-      </section>
-  
-     
-      <section id="best-practices">
-        <h2>Best Practices</h2>
-        <ul>
-          <li>Check whether HEAD is attached or detached before committing.</li>
-          <li>Use <code>git reflog</code> to see HEAD history.</li>
-          <li>Create short-lived branches for experiments.</li>
-          <li>Double-check commands that move HEAD (<code>git reset</code>, <code>git checkout</code>).</li>
-        </ul>
-      </section>
-  
-      
-      <section id="conclusion">
-        <h2>Conclusion</h2>
-        <p>In one sentence: <strong>HEAD</strong> is where you are in Git history.</p>
-      </section>
-    </article>
-  
-  
-    <div class="author-block">
-      <div class="author-info">
-        <span>Sameer M.</span>
-        <p>Developer | Git Enthusiast</p>
+      </div>
+    }
+
+    @if(card.id == 2){
+ 
+  <mat-card class="p-3 shadow-sm">
+    <!-- Header -->
+    <div class="d-flex align-items-center mb-3">
+      <div
+        class="bg-primary text-white d-flex align-items-center justify-content-center rounded-circle me-3"
+        style="width:50px; height:50px; font-weight:600;"
+      >
+        VS
+      </div>
+      <div>
+        <h2 class="h5 mb-1">
+          “Comfort is a trap”: Software engineer’s 15-year journey ends with hard truths
+        </h2>
+        <p class="text-muted small mb-0">
+          Job Loss · Software Engineer Layoff 2025 — Reflections after nearly 15 years at the same company
+        </p>
       </div>
     </div>
+
+    <!-- Feature Image -->
+    <!-- <img
+      mat-card-image
+      class="rounded mb-3"
+      src="https://via.placeholder.com/900x350.png?text=Career+Crossroads"
+      alt="Career crossroads illustration"
+    /> -->
+
+    <!-- Content -->
+    <mat-card-content>
+      <p>
+        A software engineer’s candid post on Reddit has struck a chord with professionals navigating job insecurity and career transitions. After working at the same company for nearly 15 years, the user revealed how sudden funding issues and restructuring forced him to resign, leaving him back on the job market for the first time in over a decade.
+      </p>
+
+      <h5 class="mt-4">From Stability to Sudden Exit</h5>
+      <p>
+        According to the post, the engineer stayed with the firm through multiple rebrands and funding rounds, especially in the aftermath of COVID-19. Despite hopes of funding, the situation turned grim this July. “My boss was let go soon after, and by mid-August, it was my turn. They asked me to resign instead of an official layoff, and I did, at the end of August,” the user wrote.
+      </p>
+
+      <p>
+        The professional admitted that recognition for his work was rare but said he stayed on due to comfort, constant challenges, and trust from leadership. “Once it sank in, I felt the pain: being asked to leave and realizing I never truly got the recognition that could have motivated me.”
+      </p>
+
+      <h5 class="mt-4">The Harsh Realities of Job Hunting</h5>
+      <p>
+        Now back on the job market after more than a decade, the engineer has already applied for 60–70 roles with little response. While a few rejections indicated his profile was reaching recruiters, the overall silence has been difficult.
+      </p>
+
+      <blockquote class="blockquote border-start border-4 border-primary ps-3 my-3">
+        <p class="mb-0 fw-semibold">
+          “You’re always replaceable, performance isn’t enough; business matters more. Don’t stay too long in one place; comfort is a trap. Keep open communication with managers/teammates about company direction.”
+        </p>
+      </blockquote>
+
+      <h5 class="mt-4">Life Lessons Beyond the Job</h5>
+      <p>
+        Other advice included staying adaptable, interviewing regularly to gauge market value, and maintaining updated resumes and LinkedIn profiles. “Work hard only if you’re happy and still growing; otherwise, reconsider. Keep interviewing occasionally to know your worth and market trends. Build and maintain a network; it pays off later.”
+      </p>
+
+      <p>
+        Despite the setback, the engineer remains hopeful, crediting his partner’s support for keeping him grounded. “I turn 40 in a few days, and I’m hopeful this will be the start of a new chapter,” he added.
+      </p>
+
+      <!-- Key Takeaways -->
+      <div class="row g-3 mt-3">
+        <div class="col-md-3">
+          <div class="p-3 border rounded bg-light">
+            <strong>Keep interviews current</strong>
+            <div class="small text-muted mt-1">
+              Interview occasionally to stay market-aware and avoid stagnation.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3 border rounded bg-light">
+            <strong>Don’t rely on comfort</strong>
+            <div class="small text-muted mt-1">
+              Long tenure can hide risk — reassess often.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3 border rounded bg-light">
+            <strong>Performance ≠ security</strong>
+            <div class="small text-muted mt-1">
+              Business needs drive layoffs more than performance.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3 border rounded bg-light">
+            <strong>Build your network</strong>
+            <div class="small text-muted mt-1">
+              Relationships often yield opportunities applications don’t.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tags -->
+   
+    </mat-card-content>
+
+    <!-- Footer -->
+    <mat-card-actions class="d-flex justify-content-between mt-3">
+      <small class="text-muted">Originally compiled from a Reddit post · Aug 2025</small>
+      <div>
+        <!-- <button mat-stroked-button color="primary">Share</button>
+        <button mat-flat-button color="primary">Read comments</button> -->
+        
+      </div>
+    </mat-card-actions>
+  </mat-card>
+
+
+
+    }
+  
   
   </div>
-}
+

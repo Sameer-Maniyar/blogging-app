@@ -32,7 +32,7 @@ export class BlogDetails {
   ngOnInit(): void {
      this.cardId = +this.route.snapshot.paramMap.get('id')!;
     this.card = this.cardService.getCardById(this.cardId);
-    console.log(this.card,this.cardId);
+    console.log(this.card.id);
     
     // Fetch card details using this.cardId
   }
