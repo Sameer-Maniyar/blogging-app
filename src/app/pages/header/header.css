@@ -41,7 +41,7 @@
   position: fixed;
   top: 0;
   left: -280px; /* Hidden by default */
-  width: 280px;
+  width: 210px;
   height: 100%;
   background: #fff;
   box-shadow: 2px 0 8px rgba(0,0,0,0.2);
@@ -98,3 +98,15 @@
   opacity: 1;
   pointer-events: all;
 }
+
+.close-btn {
+  display: flex;
+  align-items: center;      /* vertical center */
+  justify-content: center; 
+  width: 50px; /* horizontal center */
+  border: none;
+  background: transparent;  /* optional */
+  cursor: pointer;
+  padding: 4px;             /* optional, keeps some clickable area */
+}
+

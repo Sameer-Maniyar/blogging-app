@@ -41,7 +41,7 @@
   position: fixed;
   top: 0;
   left: -280px; /* Hidden by default */
-  width: 280px;
+  width: 250px;
   height: 100%;
   background: #fff;
   box-shadow: 2px 0 8px rgba(0,0,0,0.2);
@@ -297,7 +297,7 @@
     font-size: 0.85rem;
   }
   .sidenav {
-     width: 140px;/* Hide sidenav on tablet/mobile */
+     width: 120px;/* Hide sidenav on tablet/mobile */
   }
 }
 
@@ -325,7 +325,7 @@
     font-size: 1rem;
   }
    .sidenav {
-     width: 110px;/* Hide sidenav on tablet/mobile */
+     width: 100px;/* Hide sidenav on tablet/mobile */
   }
   
 }

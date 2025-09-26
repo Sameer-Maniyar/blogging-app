@@ -20,4 +20,12 @@ describe('Header', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  let isFlipping = false;
+
+triggerFlip() {
+  this.isFlipping = true;
+  setTimeout(() => this.isFlipping = false, 600); // reset after animation
+}
+
 });

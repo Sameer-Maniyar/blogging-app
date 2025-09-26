@@ -12,14 +12,13 @@
 
     </div>
     <!-- Logo -->
-    <div class="logo text-center">
-      <span class="bbc-logo">D</span>
-      <span class="bbc-logo accent">U</span>
-      <span class="bbc-logo">M</span>
-      <span class="bbc-logo">B</span>
+   <div class="logo text-center">
+  <span class="bbc-logo">D</span>
+  <span class="bbc-logo accent">U</span>
+  <span class="bbc-logo">M</span>
+  <span class="bbc-logo">B</span>
+</div>
 
-
-    </div>
 
     <!-- Right actions -->
     <div class="d-flex align-items-center">
@@ -66,9 +65,14 @@
 <div id="bbcSidebar" [class.open]="isSidebarOpen" class="bbc-sidebar">
   
   <!-- Close button at top right -->
+
+ <div style="display: flex; justify-content: flex-end; height: 50px;">
   <button (click)="closeSidebar()" class="close-btn">
-    <mat-icon class="fs-4" >clear</mat-icon>
+    <mat-icon class="fs-4">clear</mat-icon>
   </button>
+</div>
+
+ 
 
   <!-- Sidebar Search -->
   <div class="sidebar-search px-3 py-4">
